@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<title>Heart Health</title>
+</head>
+<body>
+    <div class="login">
+        <h1>Heart Analyzer</h1>
+
+        <form action="{{url_for('predict')}}"method="post">
+            <input type="text" name="Age" placeholder="Age" required="required"/>
+            <input type="text" name="Sex" placeholder="Sex" required="required"/>
+            <input type="text" name="CP" placeholder="CP" required="required"/>
+            <input type="text" name="trestbps" placeholder="trestbps" required="required"/>
+            <input type="text" name="chol" placeholder="chol" required="required"/>
+            <input type="text" name="fbs" placeholder="fbs" required="required"/>
+            <input type="text" name="restecg" placeholder="restecg" required="required"/>
+            <input type="text" name="thalach" placeholder="thalach" required="required"/>
+            <input type="text" name="exang" placeholder="exang" required="required"/>
+            <input type="text" name="oldpeak" placeholder="oldpeak" required="required"/>
+            <input type="text" name="slope" placeholder="slope" required="required"/>
+            <input type="text" name="ca" placeholder="ca" required="required"/>
+            <input type="text" name="thal" placeholder="thal" required="required"/>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <br>
+        <br>
+
+        {{ prediction_text }}
+    </div>
+
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">Developed By
+          <a href="http://ravirana.me/"> Ravi Rana</a>
+        </div>
+        <!-- Copyright -->
+      
+      </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
